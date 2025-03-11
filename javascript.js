@@ -1,4 +1,13 @@
+const containerDiv = document.createElement("div");
 const container = document.createElement("div");
+container.style.width = "600px";
+container.style.height = "600px";
+containerDiv.appendChild(container);
+containerDiv.style.display = "flex";
+containerDiv.style.justifyContent = "center";
+containerDiv.style.alignItems = "center";
+
+
 document.body.style.margin = "0";
 document.body.style.padding = "0";
 
@@ -34,13 +43,20 @@ btn.addEventListener("click", () =>{
             newDiv.style.aspectRatio = "1 / 1";
             newDiv.style.backgroundColor = `rgb(${Math.floor(Math.random() * 256)}, 
                                             ${Math.floor(Math.random() * 256)}, 
+                                            ${Math.floor(Math.random() * 256)})`;
+            newDiv.style.opacity = "0.1";
+            newDiv.style.border = "1px solid black";
+            newDiv.addEventListener('mouseover', () => {
+                newDiv.style.opacity = Number(newDiv.style.opacity) + 0.1;  
+                newDiv.style.backgroundColor = `rgb(${Math.floor(Math.random() * 256)}, 
+                                            ${Math.floor(Math.random() * 256)}, 
                                             ${Math.floor(Math.random() * 256)})`
+            })
             row.appendChild(newDiv);
         }
         container.appendChild(row);
     }
 })
 
-
 document.body.appendChild(btnDiv);
-document.body.appendChild(container);
+document.body.appendChild(containerDiv);

@@ -1,0 +1,12 @@
+button:hover{
+    background-color: blue;
+    color: white;
+    border: solid;
+    border-width: 5px;;
+    border-radius: 30px;
+    border-color: orange;
+}
+
+button{
+    transition: all 0.5s ease-in-out;
+}
